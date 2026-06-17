@@ -23,15 +23,15 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     } else {
         $stmt = $db->prepare("INSERT INTO teklifler(ad,mail,tel,hizmet,il,adres,alan,butce,baslangic,detay) VALUES(:ad,:mail,:tel,:hizmet,:il,:adres,:alan,:butce,:baslangic,:detay)");
         $stmt->execute($f);
-        $mesaj = 'Teklif talebiniz alındı. Uzman ekibimiz en kısa sürede sizinle iletişime geçecek.';
+        $mesaj = 'Randevu talebiniz alındı. Optisyenlerimiz randevunuzu teyit etmek için en kısa sürede sizi arayacak.';
     }
 }
 require_once __DIR__ . '/inc/header.php';
 ?>
 <section class="page-head">
   <div class="container">
-    <h1>Fiyat Teklifi Al</h1>
-    <nav><ol class="breadcrumb"><li class="breadcrumb-item"><a href="<?= SITE_URL ?>/">Anasayfa</a></li><li class="breadcrumb-item active">Teklif Al</li></ol></nav>
+    <h1>Randevu Al</h1>
+    <nav><ol class="breadcrumb"><li class="breadcrumb-item"><a href="<?= SITE_URL ?>/">Anasayfa</a></li><li class="breadcrumb-item active">Randevu Al</li></ol></nav>
   </div>
 </section>
 
@@ -39,9 +39,9 @@ require_once __DIR__ . '/inc/header.php';
   <div class="container">
     <div class="row g-5">
       <div class="col-lg-7">
-        <span class="badge-mini">Ücretsiz Teklif</span>
-        <h2>Projeniz İçin <span style="color:var(--primary)">Fiyat Teklifi</span> Alın</h2>
-        <p class="text-muted mb-4">Formu doldurun, uzman ekibimiz sizi arasın ve ihtiyacınıza en uygun teklifi hazırlayalım.</p>
+        <span class="badge-mini">Ücretsiz Göz Tahlili</span>
+        <h2>Mağazamız İçin <span style="color:var(--primary)">Randevu</span> Alın</h2>
+        <p class="text-muted mb-4">Formu doldurun, optisyenlerimiz sizi arayıp randevunuzu teyit etsin. Göz tahlili tamamen ücretsizdir.</p>
 
         <?php if($mesaj): ?><div class="alert alert-success"><i class="bi bi-check-circle-fill me-2"></i><?= e($mesaj) ?></div><?php endif; ?>
         <?php if($hata):  ?><div class="alert alert-danger"><i class="bi bi-exclamation-triangle-fill me-2"></i><?= e($hata) ?></div><?php endif; ?>
@@ -55,10 +55,10 @@ require_once __DIR__ . '/inc/header.php';
             <div class="col-md-12"><label class="form-label">E-posta</label><input type="email" class="form-control" name="mail"></div>
           </div>
 
-          <h5 class="mb-3 mt-4" style="color:var(--primary)"><i class="bi bi-clipboard-check me-2"></i>Proje Detayları</h5>
+          <h5 class="mb-3 mt-4" style="color:var(--primary)"><i class="bi bi-eyeglasses me-2"></i>Randevu Detayları</h5>
           <div class="row g-3">
             <div class="col-md-6">
-              <label class="form-label">Hizmet Türü *</label>
+              <label class="form-label">İlgilendiğiniz Hizmet *</label>
               <select class="form-select" name="hizmet" required>
                 <option value="">— Seçiniz —</option>
                 <?php foreach($hizmetler as $h): ?>
@@ -67,34 +67,41 @@ require_once __DIR__ . '/inc/header.php';
                 <option value="Diğer">Diğer</option>
               </select>
             </div>
-            <div class="col-md-6"><label class="form-label">İl / İlçe</label><input class="form-control" name="il" placeholder="örn. İstanbul / Şişli"></div>
-            <div class="col-12"><label class="form-label">Proje Adresi</label><input class="form-control" name="adres"></div>
-            <div class="col-md-4"><label class="form-label">Alan (m²)</label><input class="form-control" name="alan" placeholder="örn. 250"></div>
+            <div class="col-md-6"><label class="form-label">Tercih Ettiğiniz Tarih</label><input type="date" class="form-control" name="il"></div>
+            <input type="hidden" name="adres" value="">
             <div class="col-md-4">
-              <label class="form-label">Tahmini Bütçe</label>
-              <select class="form-select" name="butce">
-                <option value="">— Seçiniz —</option>
-                <option>50.000 ₺ altı</option>
-                <option>50.000 - 250.000 ₺</option>
-                <option>250.000 - 1.000.000 ₺</option>
-                <option>1.000.000 ₺ üzeri</option>
-                <option>Bilmiyorum</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <label class="form-label">Başlangıç Zamanı</label>
+              <label class="form-label">Tercih Edilen Saat</label>
               <select class="form-select" name="baslangic">
                 <option value="">— Seçiniz —</option>
-                <option>Acil (1 hafta içinde)</option>
-                <option>1 ay içinde</option>
-                <option>2-3 ay içinde</option>
-                <option>3 ay+ sonra</option>
-                <option>Sadece bilgi alıyorum</option>
+                <option>Sabah (09:30 - 12:00)</option>
+                <option>Öğlen (12:00 - 15:00)</option>
+                <option>Öğleden Sonra (15:00 - 18:00)</option>
+                <option>Akşam (18:00 - 20:00)</option>
+                <option>Farketmez</option>
               </select>
             </div>
-            <div class="col-12"><label class="form-label">Proje Detayı / Notlar</label><textarea class="form-control" name="detay" rows="5" placeholder="Projeniz hakkında bilmemiz gerekenler..."></textarea></div>
+            <div class="col-md-4">
+              <label class="form-label">Gözlük / Lens Geçmişi</label>
+              <select class="form-select" name="alan">
+                <option value="">— Seçiniz —</option>
+                <option>İlk kez gözlük/lens</option>
+                <option>Mevcut gözlük kullanıcısı</option>
+                <option>Mevcut lens kullanıcısı</option>
+                <option>Sadece güneş gözlüğü</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Reçeteniz Var mı?</label>
+              <select class="form-select" name="butce">
+                <option value="">— Seçiniz —</option>
+                <option>Evet, doktor reçetem var</option>
+                <option>Hayır, ölçüm istiyorum</option>
+                <option>Eski gözlük numaram var</option>
+              </select>
+            </div>
+            <div class="col-12"><label class="form-label">Eklemek İstedikleriniz / Notlar</label><textarea class="form-control" name="detay" rows="5" placeholder="Şikayetiniz, ilgilendiğiniz marka/model veya diğer notlar..."></textarea></div>
             <div class="col-12 d-flex gap-2 align-items-center flex-wrap mt-2">
-              <button class="btn btn-primary-c"><i class="bi bi-send"></i> Teklif Talebi Gönder</button>
+              <button class="btn btn-primary-c"><i class="bi bi-send"></i> Randevu Talebi Gönder</button>
               <span class="text-muted small ms-2"><i class="bi bi-shield-check me-1"></i>Bilgileriniz gizli tutulur, asla 3. kişilerle paylaşılmaz.</span>
             </div>
           </div>

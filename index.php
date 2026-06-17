@@ -8,24 +8,35 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
 
 <section class="hero">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <span class="hero-badge"><i class="bi bi-circle-fill"></i> Profesyonel · Güvenilir · Kurumsal</span>
-        <h1>Profesyonel Hizmet,<br>Güvenilir <span>Çözüm</span>,<br>Kurumsal Kalite.</h1>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="hero-badge"><i class="bi bi-circle-fill"></i> Net Görüş · Şık Tasarım · Uzman Optisyen</span>
+        <h1>Net Bir Bakış,<br>Şık Bir <span>Tarz</span>.</h1>
         <p><?= e(ayar('site_aciklama')) ?></p>
         <div class="hero-cta">
-          <a href="<?= SITE_URL ?>/hizmetler" class="btn btn-orange me-md-2">Hizmetlerimiz <i class="bi bi-arrow-right ms-2"></i></a>
-          <a href="<?= SITE_URL ?>/teklif" class="btn btn-line">Teklif Al</a>
+          <a href="<?= SITE_URL ?>/teklif" class="btn btn-orange">Ücretsiz Göz Tahlili <i class="bi bi-arrow-right ms-2"></i></a>
+          <a href="<?= SITE_URL ?>/hizmetler" class="btn btn-line">Hizmetlerimiz</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1577744486770-020ab432da65?w=900&q=85" alt="Vizyon Optik">
+          <div class="hero-float">
+            <i class="bi bi-eye"></i>
+            <div><strong>Ücretsiz Göz Tahlili</strong><small>Bilgisayarlı hassas ölçüm</small></div>
+          </div>
+          <div class="hero-float top">
+            <i class="bi bi-patch-check"></i>
+            <div><strong>Dünya Markaları</strong><small>Orijinal ürün garantisi</small></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="hero-meta d-none d-md-block">
-    <div class="container">
+    <div class="hero-meta">
       <div class="row g-3">
-        <div class="col-md-4 col-6"><div class="meta-item"><i class="bi bi-award-fill"></i><div><strong><?= e(ayar('yil')) ?>+ Yıl</strong><small>Sektör Tecrübesi</small></div></div></div>
-        <div class="col-md-4 col-6"><div class="meta-item"><i class="bi bi-people-fill"></i><div><strong>Uzman Kadro</strong><small>Alanında Deneyimli Ekip</small></div></div></div>
-        <div class="col-md-4 col-12"><div class="meta-item"><i class="bi bi-shield-check"></i><div><strong>Müşteri Memnuniyeti</strong><small>Kalite ve Güven Önceliğimiz</small></div></div></div>
+        <div class="col-md-4 col-12"><div class="meta-item"><i class="bi bi-award-fill"></i><div><strong><?= e(ayar('yil')) ?>+ Yıl Tecrübe</strong><small>Alanında uzman kadro</small></div></div></div>
+        <div class="col-md-4 col-12"><div class="meta-item"><i class="bi bi-eyeglasses"></i><div><strong>Geniş Koleksiyon</strong><small>Numaralı, güneş & lens</small></div></div></div>
+        <div class="col-md-4 col-12"><div class="meta-item"><i class="bi bi-clock-history"></i><div><strong>Aynı Gün Teslim</strong><small>Çoğu gözlükte hızlı teslim</small></div></div></div>
       </div>
     </div>
   </div>
@@ -36,21 +47,21 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
         <div class="about-img-wrap">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85" alt="">
+          <img src="https://images.unsplash.com/photo-1556015048-4d3aa10df74c?w=900&q=85" alt="">
           <div class="exp-badge"><span class="num"><?= e(ayar('yil')) ?>+</span><span class="lbl">Yıllık Tecrübe</span></div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="section-head">
           <span class="mini">Hakkımızda</span>
-          <h2>Modern Altyapı,<br><span>Uzman Ekip</span></h2>
+          <h2>Net Görüş,<br><span>Şık Tasarım</span></h2>
           <p class="desc"><?= e(ayar('hakkimizda_kisa')) ?></p>
         </div>
         <ul class="about-features">
-          <li><i class="bi bi-check"></i> Uzman ve Deneyimli Kadro</li>
-          <li><i class="bi bi-check"></i> Zamanında Teslim Garantisi</li>
-          <li><i class="bi bi-check"></i> Şeffaf Fiyatlandırma</li>
-          <li><i class="bi bi-check"></i> 7/24 Müşteri Desteği</li>
+          <li><i class="bi bi-check"></i> Ücretsiz Bilgisayarlı Göz Tahlili</li>
+          <li><i class="bi bi-check"></i> Uzman Optisyen Danışmanlığı</li>
+          <li><i class="bi bi-check"></i> Dünya Markası Çerçeve & Cam</li>
+          <li><i class="bi bi-check"></i> Anti-reflit & Mavi Işık Filtreli Cam</li>
         </ul>
         <a href="<?= SITE_URL ?>/hakkimizda" class="btn btn-orange mt-4">Daha Fazla <i class="bi bi-arrow-right ms-2"></i></a>
       </div>
@@ -62,8 +73,8 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
   <div class="container">
     <div class="section-head center">
       <span class="mini">Hizmetlerimiz</span>
-      <h2>Sunduğumuz <span>Ana Hizmetler</span></h2>
-      <p class="desc">İhtiyacınıza özel, uçtan uca profesyonel çözümler sunuyoruz.</p>
+      <h2>Sunduğumuz <span>Optik Hizmetler</span></h2>
+      <p class="desc">Göz tahlilinden numaralı gözlüğe, kontakt lensten güneş gözlüğüne kadar her ihtiyaca uzman çözüm.</p>
     </div>
     <div class="row g-4">
       <?php foreach($hizmetler as $h): ?>
@@ -80,8 +91,8 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
         <a href="<?= SITE_URL ?>/teklif" class="service-card d-flex align-items-center justify-content-center text-decoration-none" style="background:var(--dark);color:#fff;min-height:100%">
           <div class="text-center">
             <i class="bi bi-arrow-up-right" style="font-size:2.5rem;color:var(--primary)"></i>
-            <h4 style="color:#fff;margin-top:1rem">Teklif Al</h4>
-            <p style="color:#9ca3af;margin:0">Ücretsiz teklif için tıklayın</p>
+            <h4 style="color:#fff;margin-top:1rem">Randevu Al</h4>
+            <p style="color:#9ca3af;margin:0">Ücretsiz göz tahlili için tıklayın</p>
           </div>
         </a>
       </div>
@@ -93,9 +104,9 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
   <div class="container">
     <div class="row g-4">
       <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-award-fill"></i><h3><?= e(ayar('yil')) ?>+</h3><p>Yıllık Tecrübe</p></div></div>
-      <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-building"></i><h3><?= e(ayar('proje_sayi')) ?>+</h3><p>Tamamlanan Proje</p></div></div>
+      <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-eyeglasses"></i><h3><?= e(ayar('proje_sayi')) ?>+</h3><p>Hazırlanan Gözlük</p></div></div>
       <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-people-fill"></i><h3><?= e(ayar('musteri_sayi')) ?>+</h3><p>Mutlu Müşteri</p></div></div>
-      <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-person-badge"></i><h3><?= e(ayar('personel_sayi')) ?>+</h3><p>Uzman Personel</p></div></div>
+      <div class="col-md-3 col-6"><div class="stat"><i class="bi bi-person-badge"></i><h3><?= e(ayar('personel_sayi')) ?>+</h3><p>Uzman Optisyen</p></div></div>
     </div>
   </div>
 </section>
@@ -104,10 +115,10 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
   <div class="container">
     <div class="section-head d-flex justify-content-between align-items-end flex-wrap">
       <div>
-        <span class="mini">Projelerimiz</span>
-        <h2>Son <span>Çalışmalarımız</span></h2>
+        <span class="mini">Galeri</span>
+        <h2>Koleksiyon & <span>Mağazamız</span></h2>
       </div>
-      <a href="<?= SITE_URL ?>/projeler" class="btn btn-orange">Tüm Projeler <i class="bi bi-arrow-right ms-2"></i></a>
+      <a href="<?= SITE_URL ?>/projeler" class="btn btn-orange">Tüm Galeri <i class="bi bi-arrow-right ms-2"></i></a>
     </div>
     <div class="row g-4">
       <?php foreach($projeler as $p): ?>
@@ -151,17 +162,17 @@ $blogYazi  = getList('blog','durum=1','tarih DESC',3);
 <section class="cta-strip">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-8"><h3>Projeniz için ücretsiz teklif alın</h3><p>İhtiyacınızı dinliyor, size en uygun çözümü ve maliyeti çıkarıyoruz.</p></div>
-      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0"><a href="<?= SITE_URL ?>/teklif" class="btn">Teklif Talebi Gönder <i class="bi bi-arrow-right ms-2"></i></a></div>
+      <div class="col-lg-8"><h3>Ücretsiz göz tahliliniz için randevu alın</h3><p>Uzman optisyenlerimiz numaranızı ölçsün, size en uygun cam ve çerçeveyi birlikte seçelim.</p></div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0"><a href="<?= SITE_URL ?>/teklif" class="btn">Randevu Al <i class="bi bi-arrow-right ms-2"></i></a></div>
     </div>
   </div>
 </section>
 
-<section>
+<section style="padding-top:30px">
   <div class="container">
     <div class="section-head center">
       <span class="mini">Blog</span>
-      <h2>Sektörden <span>Güncel Yazılar</span></h2>
+      <h2>Göz Sağlığı & <span>Stil Rehberi</span></h2>
     </div>
     <div class="row g-4">
       <?php foreach($blogYazi as $b): ?>

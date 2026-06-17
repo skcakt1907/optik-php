@@ -9,9 +9,9 @@
 <section>
   <div class="container">
     <div class="section-head center">
-      <span class="badge-mini">Ne Yapıyoruz?</span>
-      <h2>Sunduğumuz <span>Ana Hizmetler</span></h2>
-      <p>Alanımızdaki uzmanlığımızla ihtiyacınıza özel çözümler üretiyoruz.</p>
+      <span class="badge-mini">Ne Sunuyoruz?</span>
+      <h2>Sunduğumuz <span>Optik Hizmetler</span></h2>
+      <p>Göz tahlilinden numaralı gözlüğe, kontakt lensten cam değişimine kadar uzman optik çözümler.</p>
     </div>
     <div class="row g-4">
       <?php foreach($hizmetler as $h): ?>
@@ -30,8 +30,8 @@
 
 <section class="cta">
   <div class="container d-flex justify-content-between align-items-center flex-wrap">
-    <h3>İhtiyacınıza özel teklif için bize ulaşın</h3>
-    <a href="<?= SITE_URL ?>/iletisim" class="btn">Teklif Al</a>
+    <h3>Ücretsiz göz tahliliniz için randevu alın</h3>
+    <a href="<?= SITE_URL ?>/teklif" class="btn">Randevu Al</a>
   </div>
 </section>
 <?php require_once __DIR__ . '/inc/footer.php'; ?>

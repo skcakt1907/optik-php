@@ -3,7 +3,7 @@
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
         <div class="brand">
-          <img src="<?= SITE_URL ?>/img/logo.jpg" alt="<?= e(ayar('site_adi')) ?>">
+          <img src="<?= SITE_URL ?>/img/logo.png" alt="<?= e(ayar('site_adi')) ?>">
           <p><?= e(ayar('hakkimizda_kisa')) ?></p>
           <div class="social">
             <a href="<?= e(ayar('facebook')) ?>" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -17,7 +17,7 @@
         <h5>Kurumsal</h5>
         <a href="<?= SITE_URL ?>/hakkimizda">Hakkımızda</a>
         <a href="<?= SITE_URL ?>/hizmetler">Hizmetler</a>
-        <a href="<?= SITE_URL ?>/projeler">Projeler</a>
+        <a href="<?= SITE_URL ?>/projeler">Galeri</a>
         <a href="<?= SITE_URL ?>/blog">Blog</a>
         <a href="<?= SITE_URL ?>/iletisim">İletişim</a>
       </div>

@@ -20,7 +20,7 @@ $hizmetMenu = getList('hizmetler','durum=1','sira ASC');
 <div class="nav-spacer"></div>
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="<?= SITE_URL ?>/"><img src="<?= SITE_URL ?>/img/logo.jpg" alt="<?= e(ayar('site_adi')) ?>"></a>
+    <a class="navbar-brand" href="<?= SITE_URL ?>/"><img src="<?= SITE_URL ?>/img/logo.png" alt="<?= e(ayar('site_adi')) ?>"></a>
     <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#nav"><i class="bi bi-list text-white" style="font-size:1.8rem"></i></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
@@ -34,10 +34,10 @@ $hizmetMenu = getList('hizmetler','durum=1','sira ASC');
             <?php endforeach; ?>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link <?= in_array($current,['projeler.php','proje-detay.php'])?'active':'' ?>" href="<?= SITE_URL ?>/projeler">Projelerimiz</a></li>
+        <li class="nav-item"><a class="nav-link <?= in_array($current,['projeler.php','proje-detay.php'])?'active':'' ?>" href="<?= SITE_URL ?>/projeler">Galeri</a></li>
         <li class="nav-item"><a class="nav-link <?= in_array($current,['blog.php','blog-detay.php'])?'active':'' ?>" href="<?= SITE_URL ?>/blog">Blog</a></li>
         <li class="nav-item"><a class="nav-link <?= $current==='iletisim.php'?'active':'' ?>" href="<?= SITE_URL ?>/iletisim">İletişim</a></li>
-        <li class="nav-item"><a class="nav-link nav-cta" href="<?= SITE_URL ?>/teklif">Teklif Al <i class="bi bi-arrow-right ms-1"></i></a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="<?= SITE_URL ?>/teklif">Randevu Al <i class="bi bi-arrow-right ms-1"></i></a></li>
       </ul>
     </div>
   </div>
